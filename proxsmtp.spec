@@ -14,7 +14,6 @@ Requires(post): rpm-helper
 Requires(preun): rpm-helper
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
-Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 ProxSMTP is a flexible tool that allows you to reject, change or
