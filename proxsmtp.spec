@@ -7,6 +7,7 @@ Version:	1.6
 Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://memberwebs.com/nielsen/software/proxsmtp/
 Source0:	http://memberwebs.com/nielsen/software/proxsmtp/%{rname}-%{version}.tar.bz2
 Source1:	proxsmtpd.init
