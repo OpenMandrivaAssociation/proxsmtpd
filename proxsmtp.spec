@@ -4,7 +4,7 @@
 Summary:	ProxSMTP: An SMTP Filter
 Name:		%{name}
 Version:	1.6
-Release:	%mkrel 1
+Release:	%mkrel 3
 License:	BSD
 Group:		System/Servers
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
