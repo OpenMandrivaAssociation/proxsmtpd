@@ -3,18 +3,18 @@
 
 Summary:	ProxSMTP: An SMTP Filter
 Name:		%{name}
-Version:	1.6
-Release:	%mkrel 4
+Version:	1.8
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Servers
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:		http://memberwebs.com/nielsen/software/proxsmtp/
-Source0:	http://memberwebs.com/nielsen/software/proxsmtp/%{rname}-%{version}.tar.bz2
+Source0:	http://memberwebs.com/nielsen/software/proxsmtp/%{rname}-%{version}.tar.gz
 Source1:	proxsmtpd.init
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 BuildRequires:	autoconf2.5
 BuildRequires:	automake1.7
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 ProxSMTP is a flexible tool that allows you to reject, change or
@@ -49,7 +49,7 @@ done
 %make
 
 %install
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_initrddir}
 install -d %{buildroot}/var/run/proxsmtpd
@@ -66,7 +66,7 @@ install -m0644 doc/proxsmtpd.conf %{buildroot}%{_sysconfdir}/proxsmtpd.conf
 %_preun_service proxsmtpd
 
 %clean
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -77,5 +77,3 @@ install -m0644 doc/proxsmtpd.conf %{buildroot}%{_sysconfdir}/proxsmtpd.conf
 %attr(0755,root,root) %dir /var/run/proxsmtpd
 %{_mandir}/man5/proxsmtpd.conf.5*
 %{_mandir}/man8/proxsmtpd.8*
-
-
