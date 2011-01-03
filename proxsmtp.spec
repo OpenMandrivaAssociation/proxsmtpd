@@ -4,7 +4,7 @@
 Summary:	ProxSMTP: An SMTP Filter
 Name:		%{name}
 Version:	1.8
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	BSD
 Group:		System/Servers
 URL:		http://memberwebs.com/nielsen/software/proxsmtp/
@@ -13,7 +13,7 @@ Source1:	proxsmtpd.init
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 BuildRequires:	autoconf2.5
-BuildRequires:	automake1.7
+BuildRequires:	automake
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
