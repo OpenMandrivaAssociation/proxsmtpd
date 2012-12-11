@@ -1,0 +1,54 @@
+#!/bin/bash
+#
+# proxsmtpd 	This shell script takes care of starting and stopping proxsmtpd .
+#
+# chkconfig: 345 85 30
+# description: proxsmtpd is smtpd filter daemon.
+# probe: false
+# processname: proxsmtpd
+# pidfile: /var/run/proxsmtpd/proxsmtpd.pid
+# config: /etc/proxsmtpd.conf
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+# Check that networking is up.
+[ "${NETWORKING}" = "no" ] && exit 0
+
+[ -f /etc/proxsmtpd.conf ] || exit 0
+
+[ -f /usr/sbin/proxsmtpd ] || exit 0
+
+# See how we were called.
+case "$1" in
+start)
+	echo -n "Starting proxsmtpd: "
+	daemon /usr/sbin/proxsmtpd \
+	-f /etc/proxsmtpd.conf \
+	-p /var/run/proxsmtpd/proxsmtpd.pid
+	echo
+	touch /var/lock/subsys/proxsmtpd
+	;;
+stop)
+	echo -n "Stopping proxsmtpd: "
+	killproc proxsmtpd
+	echo
+	rm -f /var/lock/subsys/proxsmtpd
+	;;
+status)
+	status proxsmtpd
+	;;
+restart|reload)
+	$0 stop
+	$0 start
+	;;
+condrestart)
+	[ -f /var/lock/subsys/proxsmtpd ] && restart
+	;;
+  *)
+	echo "Usage: proxsmtpd {start|stop|status|restart|condrestart|reload}"
+	exit 1
+esac

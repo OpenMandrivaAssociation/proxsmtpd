@@ -77,3 +77,45 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %dir /var/run/proxsmtpd
 %{_mandir}/man5/proxsmtpd.conf.5*
 %{_mandir}/man8/proxsmtpd.8*
+
+
+%changelog
+* Mon Jan 03 2011 Oden Eriksson <oeriksson@mandriva.com> 1.8-3mdv2011.0
++ Revision: 627817
+- don't force the usage of automake1.7
+
+* Tue Sep 15 2009 Thierry Vignaud <tv@mandriva.org> 1.8-2mdv2010.0
++ Revision: 441960
+- rebuild
+
+* Thu Oct 16 2008 Oden Eriksson <oeriksson@mandriva.com> 1.8-1mdv2009.1
++ Revision: 294370
+- 1.8
+
+* Fri Aug 01 2008 Thierry Vignaud <tv@mandriva.org> 1.6-4mdv2009.0
++ Revision: 259296
+- rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1.6-3mdv2009.0
++ Revision: 247224
+- rebuild
+- fix no-buildroot-tag
+
+* Mon Dec 17 2007 Thierry Vignaud <tv@mandriva.org> 1.6-1mdv2008.1
++ Revision: 131620
+- kill re-definition of %%buildroot on Pixel's request
+
+
+* Fri Jan 26 2007 Oden Eriksson <oeriksson@mandriva.com> 1.6-1mdv2007.0
++ Revision: 113820
+- Import proxsmtpd
+
+* Fri Jan 26 2007 Oden Eriksson <oeriksson@mandriva.com> 1.6-1mdv2007.1
+- 1.6
+
+* Sun Dec 25 2005 Oden Eriksson <oeriksson@mandriva.com> 1.3-1mdk
+- 1.3
+
+* Fri Nov 26 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 0.6-1mdk
+- initial mandrake package
+
