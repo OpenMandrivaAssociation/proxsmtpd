@@ -4,7 +4,7 @@
 Summary:	ProxSMTP: An SMTP Filter
 Name:		%{name}
 Version:	1.8
-Release:	%mkrel 3
+Release:	4
 License:	BSD
 Group:		System/Servers
 URL:		http://memberwebs.com/nielsen/software/proxsmtp/
