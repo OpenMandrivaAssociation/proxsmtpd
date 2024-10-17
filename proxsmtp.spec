@@ -7,7 +7,7 @@ Version:	1.8
 Release:	4
 License:	BSD
 Group:		System/Servers
-URL:		http://memberwebs.com/nielsen/software/proxsmtp/
+URL:		https://memberwebs.com/nielsen/software/proxsmtp/
 Source0:	http://memberwebs.com/nielsen/software/proxsmtp/%{rname}-%{version}.tar.gz
 Source1:	proxsmtpd.init
 Requires(post): rpm-helper
