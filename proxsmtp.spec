@@ -12,6 +12,8 @@ Source0:	http://memberwebs.com/nielsen/software/proxsmtp/%{rname}-%{version}.tar
 Source1:	proxsmtpd.init
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	autoconf2.5
 BuildRequires:	automake
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
